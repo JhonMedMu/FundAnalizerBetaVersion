@@ -1,0 +1,11 @@
+streamlit
+pandas
+openpyxl 
+streamlit-option-menu
+re
+plotly.express
+pickle
+string
+plotly.graph_objs
+chart_studio.plotly
+base64
