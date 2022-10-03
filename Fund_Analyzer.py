@@ -4,7 +4,7 @@ Created on Mon Jul  4 06:05:54 2022
 
 @author: K01486
 """
-pip install plotly==5.10.0
+#pip install plotly==5.10.0
 import re
 import pandas as pd
 import plotly.express as px
