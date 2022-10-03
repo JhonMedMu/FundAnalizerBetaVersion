@@ -4,6 +4,7 @@ Created on Mon Jul  4 06:05:54 2022
 
 @author: K01486
 """
+pip install plotly==5.10.0
 import re
 import pandas as pd
 import plotly.express as px
@@ -15,20 +16,7 @@ import plotly.graph_objs as go
 import chart_studio.plotly as py
 import base64
 from plotly.offline import init_notebook_mode, iplot
-def add_bg_from_local(image_file):
-    with open(image_file, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read())
-    st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
-        background-size: cover
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-    )
+
 
 def col(cell_name: str):
     character = cell_name.split('-')[0]
@@ -43,15 +31,18 @@ def row(cell_name: str):
 
 character_number_mapping = {string.ascii_lowercase[i]:i for i in range(len(string.ascii_lowercase))}
 
-# loading model
-
-gapminder=px.data.gapminder()
-
-gapminder.tail(4)
 
 
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://raw.githubusercontent.com/JhonMedMu/FundAnalizerBetaVersion/main/VicctusBG.png");
+background-size: cover;
+}
+</style>
+'''
 
-add_bg_from_local('D:\\Datos de Usuarios\\K01486\\My Documents\\Documentos Vicctus ISI\\Streamlit Fund Analyzer\\VicctusBG.png')   
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # sidebar for navigation
 with st.sidebar:
@@ -87,11 +78,11 @@ if (selected == 'US Bond Funds'):
     
     # page title
     st.title('US Bond Funds')
-    file_name='D:\\Datos de Usuarios\\K01486\\My Documents\\Documentos Vicctus ISI\\Streamlit Fund Analyzer\\US_Global_Bond_Funds.xlsx'
+    file_name='https://github.com/JhonMedMu/FundAnalizerBetaVersion/blob/main/US_Global_Bond_Funds.xlsx?raw=true'
     sheet_to_df_map = pd.read_excel(file_name, sheet_name=None)
     
-    xls = pd.ExcelFile('D:\\Datos de Usuarios\\K01486\\My Documents\\Documentos Vicctus ISI\\Streamlit Fund Analyzer\\US_Global_Bond_Funds.xlsx')
-    excel_file = pd.ExcelFile('D:\\Datos de Usuarios\\K01486\\My Documents\\Documentos Vicctus ISI\\Streamlit Fund Analyzer\\US_Global_Bond_Funds.xlsx', engine='openpyxl')
+    xls = pd.ExcelFile('https://github.com/JhonMedMu/FundAnalizerBetaVersion/blob/main/US_Global_Bond_Funds.xlsx?raw=true')
+    excel_file = pd.ExcelFile('https://github.com/JhonMedMu/FundAnalizerBetaVersion/blob/main/US_Global_Bond_Funds.xlsx?raw=true', engine='openpyxl')
     
     
     SheetNames=xls.sheet_names  # see all sheet names
