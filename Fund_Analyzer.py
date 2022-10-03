@@ -5,17 +5,17 @@ Created on Mon Jul  4 06:05:54 2022
 @author: K01486
 """
 #pip install plotly==5.10.0
-import re
+#import re
 import pandas as pd
-import plotly.express as px
-import pickle
+#import plotly.express as px
+#import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 import string
 import plotly.graph_objs as go
-import chart_studio.plotly as py
-import base64
-from plotly.offline import init_notebook_mode, iplot
+#import chart_studio.plotly as py
+#import base64
+#from plotly.offline import init_notebook_mode, iplot
 
 
 def col(cell_name: str):
