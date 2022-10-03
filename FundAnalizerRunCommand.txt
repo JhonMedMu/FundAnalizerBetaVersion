@@ -1,0 +1,1 @@
+streamlit run "D:\Datos de Usuarios\K01486\My Documents\Documentos Vicctus ISI\Streamlit Fund Analyzer\Fund_Analyzer.py"

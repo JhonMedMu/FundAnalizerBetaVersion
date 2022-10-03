@@ -1,0 +1,4 @@
+Stop problems with downloading packeges:
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org pandas
+
+pandas, openpyxl, streamlit, streamlit-option-menu
